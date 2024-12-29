@@ -1,8 +1,9 @@
 .heading2Xl {
-    font-size: 2.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.05rem;
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.08rem;
     margin: 1rem 0;
+    font-weight: 200;
 }
   
 .headingXl {
@@ -10,17 +11,20 @@
     line-height: 1.3;
     letter-spacing: -0.05rem;
     margin: 1rem 0;
+    font-weight: 200;
 }
   
 .headingLg {
     font-size: 1.5rem;
     line-height: 1.4;
     margin: 1rem 0;
+    font-weight: 200;
 }
   
 .headingMd {
     font-size: 1.2rem;
     line-height: 1.5;
+    font-weight: 200;
 }
   
 .borderCircle {
@@ -36,17 +40,26 @@
 }
   
 .list {
-    list-style: none;
     padding: 0;
     margin: 0;
 }
   
 .listItem {
-    margin: 0 0 1.25rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--borderColor);
+
+    &:hover {
+        background-color: var(--highlight);
+        color: var(--bg);
+
+        time, span {
+            color: var(--bg);
+        }
+    }
 }
   
 .lightText {
-    color: #666;
+    color: var(--lightText);
 }
 
 .code {
@@ -56,6 +69,9 @@
 }
 
 .tag {
+    display: inline-block;
+    font-family: "Roboto Mono", serif;
+    font-weight: 400;
     font-size: 0.8rem;
     margin-right: 10px;
     padding: 4px 6px;
@@ -65,9 +81,11 @@
     border-radius: var(--navLinkBorderRadius);
     color: var(--tagColor);
 
-    &:hover {
-        background-color: var(--tagColor);
-        color: var(--bg)
+    &.link {
+        &:hover {
+            background-color: var(--tagColor);
+            color: var(--bg)
+        }
     }
 }
 

@@ -47,41 +47,43 @@ export default function Layout({ children, siteTitle, home }) {
             )}
 
             <footer className={styles.footer}>
-                <div class = "row">
-                    <div class = "col-lg-6 d-flex align-items-start flex-column">
-                        <h2 className={`${utilStyles.headingXl} mb-auto`}>
-                            Let's connect!
-                        </h2>
+                <div className = "row">
+                    <div className = "col-lg-6 mt-5 mb-5 d-flex align-items-start flex-column">
                         
-                        <div className={utilStyles.code}>
-                            <p>Made by Linh Do</p>
-                            <small className={utilStyles.lightText}>Last Updated: {document.lastModified}</small>
-                        </div>
+                            <h2 className={`${utilStyles.headingXl} mb-auto`}>
+                                Let's connect!
+                            </h2>
+                            
+                            <div className={utilStyles.code}>
+                                <p>Made by Linh Do</p>
+                                <small className={utilStyles.lightText}>Last Updated: {document.lastModified}</small>
+                            </div>
+                        
                     </div>
-                    <div className = {`col-lg-6 ${utilStyles.code}`}>
-                        <div class = "mb-5">
+                    <div className = {`col-lg-6 ${utilStyles.code} mt-5 mb-5`}>
+                        <div className = "mb-5">
                             <p>/ EMAIL</p>
-                            <a href="mailto:dohalinh2303@gmail.com" className={utilStyles.tag}>
+                            <a href="mailto:dohalinh2303@gmail.com" className={`${utilStyles.tag} ${utilStyles.link}`}>
                                 dohalinh2303@gmail.com
                             </a>
-                            <a href="mailto:do24l@mtholyoke.edu" className={utilStyles.tag}>
+                            <a href="mailto:do24l@mtholyoke.edu" className={`${utilStyles.tag} ${utilStyles.link}`}>
                                 do24l@mtholyoke.edu
                             </a>
                         </div>
 
-                        <div class = "mb-2">
+                        <div className = "mb-2">
                             <p>/ SOCIAL</p>
-                            <a href="https://github.com/LynnHaDo" target="_blank" className={utilStyles.tag}>
+                            <a href="https://github.com/LynnHaDo" target="_blank" className={`${utilStyles.tag} ${utilStyles.link}`}>
                                 Github 
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/linh-do-0327371b2/"
                                 target="_blank"
-                                className={utilStyles.tag}
+                                className={`${utilStyles.tag} ${utilStyles.link}`}
                             >
                                 LinkedIn
                             </a>
-                            <a href="https://www.behance.net/dolinh" target="_blank" className={utilStyles.tag}>
+                            <a href="https://www.behance.net/dolinh" target="_blank" className={`${utilStyles.tag} ${utilStyles.link}`}>
                                 Behance
                             </a>
                         </div>
