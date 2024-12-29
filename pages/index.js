@@ -1,4 +1,4 @@
-import utilStyles from '../styles/utils.module.css';
+import utilStyles from '../styles/utils.module.scss';
 
 import Head from 'next/head'
 import Link from 'next/link'
@@ -23,22 +23,27 @@ export default function Home( { allProjectsData } ) {
         <Head>
             <title>Linh Do</title>
         </Head>
-        <section className={utilStyles.headingMd}>
-            <p>My name is Linh</p>
-        </section>
 
-        <ul className={utilStyles.list}>
-          {allProjectsData.map(({ id, date, title, end_date, label }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/projects/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date fromString={date} /> - <Date fromString={end_date} />
-              </small>
-              {label}
-            </li>
-          ))}
-        </ul>
+        <main>
+            <h1 className={utilStyles.headingXl}>
+                My name is Linh
+            </h1>
+
+            <ul className={utilStyles.list}>
+                {allProjectsData.map(({ id, date, title, end_date, label }) => (
+                    <li className={utilStyles.listItem} key={id}>
+                    <Link href={`/projects/${id}`}>{title}</Link>
+                    <br />
+                    <small className={utilStyles.lightText}>
+                        <Date fromString={date} /> - <Date fromString={end_date} />
+                    </small>
+                    <div className={utilStyles.tag}>
+                        {label}
+                    </div>
+                    </li>
+                ))}
+            </ul>
+        </main>
     </Layout>
   );
 }

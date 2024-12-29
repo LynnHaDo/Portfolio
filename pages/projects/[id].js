@@ -3,7 +3,7 @@ import Layout from '../../components/layout'
 import Date from '../../components/date'
 import { getAllProjectIds, getProjectData } from '../../lib/projects'
 
-import utilStyles from '../../styles/utils.module.css'
+import utilStyles from '../../styles/utils.module.scss'
 
 export default function Project({ projectData }) {
     return (
@@ -17,14 +17,20 @@ export default function Project({ projectData }) {
             <div className={utilStyles.lightText}>
                 <Date fromString={projectData.date} /> - <Date fromString={projectData.end_date} />
             </div>
-            {projectData.label}
+            <div className={utilStyles.tag}>
+                {projectData.label}
+            </div>
             <div dangerouslySetInnerHTML={{ __html: projectData.contentHtml }} />
         </Layout>
     )
 }
 
+/**
+ * Defines a list of paths to be statically generated 
+ * @returns 
+ */
 export async function getStaticPaths() {
-    // returns a list of possible value for id 
+    // returns a list of possible values for id 
     const paths = getAllProjectIds();
     return {
         paths, 

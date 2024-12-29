@@ -1,46 +1,76 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
 
-export const name = 'Linh Do'
+import styles from './layout.module.scss';
+import utilStyles from '../styles/utils.module.scss';
 
 export default function Layout({ children, siteTitle, home }) {
     return (
-        <div className={styles.container}>
+        <div className="container">
             <Head>
                 <meta name="og:title" content={siteTitle} />
                 <link rel="icon" href="/logo.ico" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap" rel="stylesheet" />
             </Head>
 
-            <header className = {styles.header}>
-                <h2 className={utilStyles.headingLg}>
-                    <Link href="/" className={utilStyles.colorInherit}>
-                        {name}
+            <header className = {`${styles.header} ${utilStyles.code} d-flex justify-content-between align-items-center`}>
+                <Link href="/" className={`${utilStyles.nav} ${utilStyles.colorInherit}`}>
+                    LD
+                </Link>
+
+                <div className={`${styles.buttons} d-flex justify-content-between align-items-center`}>
+                    <Link href="/" className={utilStyles.nav}>
+                        Projects
                     </Link>
-                </h2>
+                    <Link href="/about" className={utilStyles.nav}>
+                        About 
+                    </Link>
+                    <Link href="https://github.com/LynnHaDo" target="_blank" rel="noopener noreferrer" 
+                          className={utilStyles.nav}>
+                        Github
+                    </Link>
+                </div>
             </header>
 
-            <main>{children}</main>
+            <main className={styles.main}>{children}</main>
 
             {!home && (
                 <div className={styles.backToHome}>
-                <Link href="/">← Back to home</Link>
+                    <Link href="/">← Back to home</Link>
                 </div>
             )}
 
-            <footer>
-                <a
-                    href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                Powered by{' '}
-                <img src="/logo.png" alt="L" className={styles.logo} />
-                </a>
+            <footer className={styles.footer}>
+                <div class = "row">
+                    <div class = "col-lg-6"></div>
+                    <div className = {`${utilStyles.code} col-lg-6`}>
+                        <div class = "mb-5">
+                            <p>/ EMAIL</p>
+                            <a href="mailto:dohalinh2303@gmail.com" className={utilStyles.tag}>
+                                dohalinh2303@gmail.com
+                            </a>
+                            <a href="mailto:do24l@mtholyoke.edu" className={utilStyles.tag}>
+                                do24l@mtholyoke.edu
+                            </a>
+                        </div>
+
+                        <div class = "mb-2">
+                            <p>/ SOCIAL</p>
+                            <a href="https://github.com/LynnHaDo" target="_blank" className={utilStyles.tag}>
+                                Github 
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/linh-do-0327371b2/"
+                                target="_blank"
+                                className={utilStyles.tag}
+                            >
+                                LinkedIn
+                            </a>
+                            <a href="https://www.behance.net/dolinh" target="_blank" className={utilStyles.tag}>
+                                Behance
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
     )

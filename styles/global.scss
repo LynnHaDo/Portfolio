@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Roboto+Mono&display=swap');
+
+:root {
+    --bg: #011627;
+    --text: #C0C7D1;
+    --highlight: #AAE87B;
+    --link: #75D1C4;
+    --navLinkBg: #0A2534;
+    --navLinkBorderRadius: 2px;
+    --pixelTextColor: #FEC97D;
+    --borderColor: #5F7D97;
+    --tagColor: #9372C9;
+    --squareTextColor: #6E9CF1;
+}
+
+// Include functions first
+@import "bootstrap/scss/functions";
+
+// Customize some defaults
+$body-color: #C0C7D1;
+$body-bg: #011627;
+$border-radius: .4rem;
+$success: #AAE87B;
+
+// Required
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+// @import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+// @import "bootstrap/scss/dropdown";
+// @import "bootstrap/scss/button-group";
+// @import "bootstrap/scss/nav";
+// @import "bootstrap/scss/navbar"; // Requires nav
+// @import "bootstrap/scss/card";
+// @import "bootstrap/scss/breadcrumb";
+// @import "bootstrap/scss/accordion";
+// @import "bootstrap/scss/pagination";
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+// @import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+// @import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Golos Text", serif;
+  background-color: var(--bg);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+p {
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
