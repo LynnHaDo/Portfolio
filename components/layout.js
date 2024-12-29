@@ -38,7 +38,9 @@ export default function Layout({ children, siteTitle, home }) {
                 </div>
             </header>
 
-            <main className={styles.main}>{children}</main>
+            <div className="container">
+             <main className={styles.main}>{children}</main>
+            </div>
 
             {!home && (
                 <div className={styles.backToHome}>
@@ -54,7 +56,7 @@ export default function Layout({ children, siteTitle, home }) {
                                 Let's connect!
                             </h2>
                             
-                            <div className={utilStyles.code}>
+                            <div className={`${utilStyles.code} mt-5`}>
                                 <p>Made by Linh Do</p>
                                 <small className={utilStyles.lightText}>Last Updated: {document.lastModified}</small>
                             </div>

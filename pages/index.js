@@ -30,24 +30,29 @@ export default function Home( { allProjectsData, techStack } ) {
             <title>Linh Do</title>
         </Head>
 
-        <div className="container">
-            <div className={styles.displayText}>
-                <h1 className={utilStyles.heading2Xl}>Hi, I'm Linh</h1>
-                <h3 className={`${styles.text}`}>
-                    I'm doing (and learning about) <Typing words = {["full-stack web development", 
-                                                                    "mobile development", 
-                                                                    "research", 
-                                                                    "product design"]}/>.
-                </h3>
-                <div className={`${utilStyles.tagsWrapper} mt-5`}>
-                    {
-                        techStack.map((item) => (
-                            <div key={item} className={utilStyles.tag}>
-                                {item}
-                            </div>
-                        ))
-                    }
+            <div className="row">
+                <div className={`col-lg-6 ${styles.displayTextWrapper}`}>
+                <div className={styles.displayText}>
+                    <div className={`${utilStyles.heading2Xl}`}>Welcome to Linh's Space</div>
+                    <div className={`${utilStyles.headingXl} 
+                                     ${utilStyles.caption}`}>where I talk about 
+                                     my <Typing words = {["full-stack web development", 
+                                                        "mobile development", 
+                                                        "research", 
+                                                        "product design"]}/> projects.
+                    </div>
+                    <div className={`${utilStyles.tagsWrapper} mt-5`}>
+                        {
+                            techStack.map((item) => (
+                                <div key={item} className={`${utilStyles.tag} mb-1`}>
+                                    {item}
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
+                </div>
+                <div className='col-lg-6'></div>
             </div>
             
             <div className={`${styles.projectHeader} row`}>
@@ -71,7 +76,7 @@ export default function Home( { allProjectsData, techStack } ) {
                                 </div>
                             </div>
                             <div className={`col-lg-5 d-flex align-items-center ${utilStyles.headingMd}`}>
-                                <h4 className={utilStyles.projectTitle}>{title}</h4>
+                                <h4 className={styles.projectTitle}>{title}</h4>
                             </div>
                             <div className="col-lg-4 d-flex align-items-center">
                                 <span className={utilStyles.tag}>
@@ -82,7 +87,6 @@ export default function Home( { allProjectsData, techStack } ) {
                     </Link>
                 ))}
             </div>
-        </div>
     </Layout>
   );
 }

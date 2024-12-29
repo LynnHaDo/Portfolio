@@ -1,6 +1,11 @@
-.displayText {
-    margin: 5rem 0;
-    text-align: center;
+.displayTextWrapper {
+    margin: 0;
+    padding: 0;
+
+    .displayText {
+        margin: 5rem 0;
+        padding: 0;
+    }
 }
 
 .projectHeader {
@@ -11,4 +16,5 @@
 
 .projectTitle {
     margin-bottom: 0;
+    letter-spacing: -.04em;
 }
