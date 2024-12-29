@@ -4,7 +4,16 @@ import Link from 'next/link';
 import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 
+import Logo from './logo';
+
+import { useMounted } from '../hooks/useMounted'
+
 export default function Layout({ children, siteTitle, home }) {
+    const mounted = useMounted()
+
+    if (!mounted) 
+        return null
+    else
     return (
         <div className="container">
             <Head>
@@ -13,9 +22,7 @@ export default function Layout({ children, siteTitle, home }) {
             </Head>
 
             <header className = {`${styles.header} ${utilStyles.code} d-flex justify-content-between align-items-center`}>
-                <Link href="/" className={`${utilStyles.nav} ${utilStyles.colorInherit}`}>
-                    LD
-                </Link>
+                <Logo />
 
                 <div className={`${styles.buttons} d-flex justify-content-between align-items-center`}>
                     <Link href="/" className={utilStyles.nav}>
@@ -41,8 +48,17 @@ export default function Layout({ children, siteTitle, home }) {
 
             <footer className={styles.footer}>
                 <div class = "row">
-                    <div class = "col-lg-6"></div>
-                    <div className = {`${utilStyles.code} col-lg-6`}>
+                    <div class = "col-lg-6 d-flex align-items-start flex-column">
+                        <h2 className={`${utilStyles.headingXl} mb-auto`}>
+                            Let's connect!
+                        </h2>
+                        
+                        <div className={utilStyles.code}>
+                            <p>Made by Linh Do</p>
+                            <small className={utilStyles.lightText}>Last Updated: {document.lastModified}</small>
+                        </div>
+                    </div>
+                    <div className = {`col-lg-6 ${utilStyles.code}`}>
                         <div class = "mb-5">
                             <p>/ EMAIL</p>
                             <a href="mailto:dohalinh2303@gmail.com" className={utilStyles.tag}>

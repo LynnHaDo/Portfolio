@@ -1,6 +1,7 @@
 .header {
     width: 100%;
-    margin: 1rem auto;
+    position: sticky;
+    top: 1rem;
 }
 
 .buttons {
@@ -12,14 +13,13 @@
 
 .main {
     padding: 5rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .footer {
     width: 100%;
     padding: 5rem 0;
+
+    h2 {
+        margin: 0;
+    }
 }
