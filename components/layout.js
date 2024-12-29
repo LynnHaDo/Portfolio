@@ -5,9 +5,9 @@ import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 
 import Logo from './logo';
+import Loader from './loader';
 
 import { useEffect, useState } from 'react';
-import { useTheme } from '../hooks/useTheme';
 import { useMounted } from '../hooks/useMounted'
 
 const themes = ['dark', 'light', 'green'];
@@ -15,7 +15,6 @@ import {darkThemeStyle, lightThemeStyle, greenThemeStyle} from '../components/st
 
 export default function Layout({ children, siteTitle, home }) {
     const mounted = useMounted();
-    //const theme = useTheme();
 
     const [selectedTheme, setSelectedTheme] = useState('dark');
     const [isDropdownActive, setIsDropdownActive] = useState(false);
@@ -66,10 +65,9 @@ export default function Layout({ children, siteTitle, home }) {
     }
 
     if (!mounted) 
-        return null
+        return <Loader />
     else
     return (
-        
         <div className="container">
             <Head>
                 <meta name="og:title" content={siteTitle} />

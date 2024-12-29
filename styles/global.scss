@@ -53,6 +53,34 @@ p {
 
 * {
   box-sizing: border-box;
+
+  &::selection {
+    background-color: var(--highlight);
+    color: var(--navLinkHoveredColor)
+  }
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--link);
+  }
+
+  /* Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--bg);
+    border-left: 1px dotted var(--link);
+    border-right: 1px dotted var(--link);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--link);
+    border-radius: var(--navLinkBorderRadius);
+  }
 }
 
 img {
