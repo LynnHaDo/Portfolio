@@ -4,15 +4,39 @@
     margin-bottom: 2rem;
     margin-left: -.07em;
     letter-spacing: -.07em;
-    font-size: calc(80px + ((170 - 100)*(100vw - 960px) /(1728 - 960)));
+    
+    @media (min-width: 960px) {
+        font-size: calc(100px + ((150 - 100) * (100vw - 960px) / (1728 - 960)))
+    }
+
+    @media (min-width: 600px) {
+        font-size: calc(80px + ((100 - 80)*(100vw - 600px) /(960 - 600)));
+    }
+
+    @media (max-width: 599px) {
+        font-size: calc(60px + ((80 - 60)*(100vw - 390px) /(600 - 390)));
+        line-height: 87%;
+    }
 }
   
 .headingXl {
-    font-size: calc(40px + ((43 - 40)*(100vw - 390px) /(1728 - 390)));
-    line-height: 95%;
-    letter-spacing: -0.07rem;
+    line-height: 90%;
+    letter-spacing: -0.06rem;
     margin: 1rem 0;
     margin-left: -.07em;
+
+    @media (min-width: 960px) {
+        font-size: calc(28px + ((43 - 28) * (100vw - 960px) / (1728 - 960)));
+    }
+
+    @media (min-width: 600px) {
+        font-size: calc(26px + ((28 - 26)*(100vw - 600px) /(960 - 600)));
+    }
+
+    @media (max-width: 599px) {
+        font-size: calc(24px + ((26 - 24)*(100vw - 390px) /(600 - 390)));
+        line-height: 110%;
+    }
 }
   
 .headingLg {
