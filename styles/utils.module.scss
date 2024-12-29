@@ -5,11 +5,10 @@
     margin-left: -.07em;
     letter-spacing: -.07em;
     font-size: calc(80px + ((170 - 100)*(100vw - 960px) /(1728 - 960)));
-
 }
   
 .headingXl {
-    font-size: calc(20px + ((43 - 20)*(100vw - 390px) /(1728 - 390)));
+    font-size: calc(40px + ((43 - 40)*(100vw - 390px) /(1728 - 390)));
     line-height: 95%;
     letter-spacing: -0.07rem;
     margin: 1rem 0;
@@ -51,10 +50,10 @@
 
     &:hover {
         background-color: var(--highlight);
-        color: var(--bg);
+        color: var(--navLinkHoveredColor);
 
         time, span {
-            color: var(--bg);
+            color: var(--navLinkHoveredColor);
         }
     }
 }
@@ -95,15 +94,17 @@
 }
 
 .nav {
+    cursor: pointer;
     display: block;
-        padding: 4px 6px;
-        text-transform: uppercase;
-        text-align: center;
-        background-color: var(--navLinkBg);
-        border-radius: var(--navLinkBorderRadius);
+    padding: 4px 6px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--link);
+    background-color: var(--navLinkBg);
+    border-radius: var(--navLinkBorderRadius);
 
-        &:hover {
-            background-color: var(--highlight);
-            color: var(--navLinkBg)
-        }
+    &:hover {
+        background-color: var(--highlight);
+        color: var(--navLinkHoveredColor)
+    }
 }

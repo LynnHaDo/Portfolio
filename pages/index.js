@@ -4,6 +4,8 @@ import utilStyles from '../styles/utils.module.scss';
 import Head from 'next/head'
 import Link from 'next/link'
 import { getSortedProjectsData } from '../lib/projects';
+import { useContext } from 'react';
+import { LayoutContext } from '../components/context';
 
 import Layout from '../components/layout'
 import Date from '../components/date';
@@ -24,12 +26,14 @@ export async function getStaticProps() {
 }
 
 export default function Home( { allProjectsData, techStack } ) {
+    const props = useContext(LayoutContext);
+
   return (
     <Layout home siteTitle={"Home"}>
         <Head>
             <title>Linh Do</title>
         </Head>
-
+        
             <div className="row">
                 <div className={`col-lg-6 ${styles.displayTextWrapper}`}>
                 <div className={styles.displayText}>

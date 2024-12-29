@@ -6,15 +6,70 @@ import utilStyles from '../styles/utils.module.scss';
 
 import Logo from './logo';
 
+import { useEffect, useState } from 'react';
+import { useTheme } from '../hooks/useTheme';
 import { useMounted } from '../hooks/useMounted'
 
+const themes = ['dark', 'light', 'green'];
+import {darkThemeStyle, lightThemeStyle, greenThemeStyle} from '../components/styles'
+
 export default function Layout({ children, siteTitle, home }) {
-    const mounted = useMounted()
+    const mounted = useMounted();
+    //const theme = useTheme();
+
+    const [selectedTheme, setSelectedTheme] = useState('dark');
+    const [isDropdownActive, setIsDropdownActive] = useState(false);
+    const [dropdownIcon, setDropdownIcon] = useState('+');
+
+    const changeTheme = (newTheme) => {
+        localStorage.setItem('theme', newTheme)
+        setSelectedTheme(newTheme)
+        setThemeStyle()
+    }
+
+    const getThemeStyles = () => {
+        if (localStorage.getItem('theme') != null) 
+        {
+            setSelectedTheme(localStorage.getItem('theme'))
+        }
+
+        switch (selectedTheme) {
+            case 'dark':
+                return darkThemeStyle
+            case 'light':
+                return lightThemeStyle
+            default:
+                return greenThemeStyle
+        }
+    }
+
+    const setThemeStyle = () => {
+        let themeStyle = getThemeStyles();
+        const root = document.querySelector(':root');
+        Object.entries(themeStyle).forEach(v => root.style.setProperty(v[0], v[1]));
+    }
+
+    useEffect(() => {
+        setThemeStyle()
+    }, [selectedTheme])
+
+    const toggleDropdown = (isOpen) => {
+        setIsDropdownActive(isOpen);
+        
+        if (isOpen) 
+        {
+            setDropdownIcon('-');
+        }
+        else {
+            setDropdownIcon('+');
+        }
+    }
 
     if (!mounted) 
         return null
     else
     return (
+        
         <div className="container">
             <Head>
                 <meta name="og:title" content={siteTitle} />
@@ -35,11 +90,28 @@ export default function Layout({ children, siteTitle, home }) {
                           className={utilStyles.nav}>
                         Github
                     </Link>
+                    
+                    <div className={styles.wrapperDropdown}
+                         onClick={() => toggleDropdown(!isDropdownActive)}>
+                        <span className={`${utilStyles.nav} ${styles.selectedTheme}`}>{selectedTheme}</span>
+                        <span className = {`${styles.arrow} transition-all ml-auto`}>{dropdownIcon}</span>
+                        <ul className={`${styles.dropdown} ${isDropdownActive ? styles.active : ''}`}>
+                            {
+                                themes.map((theme) => (
+                                    <li key={theme} onClick={() => changeTheme(theme)}>
+                                        {theme.toUpperCase()}
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
                 </div>
             </header>
 
             <div className="container">
-             <main className={styles.main}>{children}</main>
+             <main className={styles.main}>
+                {children}
+             </main>
             </div>
 
             {!home && (

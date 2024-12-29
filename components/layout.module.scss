@@ -5,9 +5,76 @@
 }
 
 .buttons {
-    a {
+    > * {
         margin-left: 10px;
         width: 90px;
+    }
+}
+
+.wrapperDropdown {
+    position: relative;
+    display: inline-block;
+    background: var(--navLinkBg);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    .arrow {
+        color: var(--link);
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        transition: all 0.3s;
+    }
+
+    .selectedTheme {
+        text-align: left;
+    }
+
+    &:hover {
+        .arrow {
+            transition: none;
+            color: var(--navLinkHoveredColor);
+        }
+    }
+
+    ul {
+        transition: 0.3s;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
+
+        z-index: 99;
+
+        -webkit-transform-origin: top;
+        -moz-transform-origin: top;
+        -ms-transform-origin: top;
+        transform-origin: top;
+
+        opacity: 0;
+        visibility: hidden;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        li {
+            padding: 0 6px;
+            overflow: hidden;
+
+            &:hover, &.selected {
+                background-color: var(--highlight);
+                color: var(--navLinkHoveredColor);
+            }
+        }
     }
 }
 
