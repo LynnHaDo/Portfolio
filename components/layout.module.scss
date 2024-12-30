@@ -85,6 +85,18 @@
     }
 }
 
+.backToHome {
+    svg {
+        margin-right: 10px;
+    }
+
+    path {
+        fill: var(--link);
+    }
+    
+    width: 150px;
+}
+
 .main {
     padding: 5rem 0;
 }

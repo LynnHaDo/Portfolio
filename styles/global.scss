@@ -55,7 +55,7 @@ img {
 
 a {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline dotted var(--link);
 }
 
 p {

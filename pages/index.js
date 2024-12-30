@@ -25,7 +25,7 @@ export async function getStaticProps() {
 
 export default function Home( { allProjectsData, techStack } ) {
   return (
-    <Layout home siteTitle={"Home"}>
+    <Layout home siteTitle="Home">
         <Head>
             <title>Linh Do</title>
         </Head>
@@ -68,7 +68,7 @@ export default function Home( { allProjectsData, techStack } ) {
             </div>
             <div className={utilStyles.list}>
                 {allProjectsData.map(({ id, date, title, end_date, label }) => (
-                    <Link href={`/projects/${id}`} className={utilStyles.colorInherit} key={id}>
+                    <Link href={`/projects/${id}`} className={`${utilStyles.colorInherit} ${utilStyles.noUnderline}`} key={id}>
                         <div className={`${utilStyles.listItem} row`}>
                             <div className={`col-lg-3 d-flex align-items-center ${utilStyles.lightText} ${utilStyles.code}`}>
                                 <div>

@@ -42,6 +42,7 @@
 .headingMd {
     font-size: calc(22px + ((28 - 22)*(100vw - 960px) /(1728 - 960)));
     line-height: 1.5;
+    text-decoration: none;
 }
   
 .borderCircle {
@@ -94,7 +95,12 @@
     text-transform: uppercase;
 }
 
+.noUnderline {
+    text-decoration: none;
+}
+
 .tag {
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     font-family: "Roboto Mono", serif;
@@ -117,6 +123,7 @@
 }
 
 .nav {
+    text-decoration: none;
     cursor: pointer;
     display: block;
     padding: 4px 6px;
@@ -126,9 +133,13 @@
     background-color: var(--navLinkBg);
     border-radius: var(--navLinkBorderRadius);
 
-    &:hover {
+    &:hover, &.active {
         background-color: var(--highlight);
-        color: var(--navLinkHoveredColor)
+        color: var(--navLinkHoveredColor);
+
+        svg, path {
+            fill: var(--navLinkHoveredColor)
+        }
     }
 }
 

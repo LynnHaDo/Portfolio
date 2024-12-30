@@ -1,18 +1,16 @@
 import Head from 'next/head'
-import Link from 'next/link'
-
 import Layout from '../../components/layout'
 import Date from '../../components/date'
 
-
-import { getAllProjectIds, getProjectData } from '../../lib/projects'
+import path from 'path'
+import { getAllProjectIds, getHtmlContentFromMd, projectsDir } from '../../lib/projects'
 
 import styles from '../../styles/Project.module.scss'
 import utilStyles from '../../styles/utils.module.scss'
 
 export default function Project({ projectData }) {
     return (
-        <Layout>
+        <Layout siteTitle={"Projects"}>
             <Head>
                 <title>Projects | {projectData.title}</title>
             </Head>
@@ -105,7 +103,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     // fetch data for the project using params.id
-    const projectData = await getProjectData(params.id);
+    const projectData = await getHtmlContentFromMd(projectsDir, params.id);
     return {
         props: {
             projectData

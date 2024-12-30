@@ -8,7 +8,10 @@ export const darkThemeStyle = {
     '--roleTextColor': '#FEC97D',
     '--borderColor': '#5F7D97',
     '--tagColor': '#9372C9',
-    '--lightText': '#6E9CF1'
+    '--lightText': '#6E9CF1',
+    '--sweaterColor': '#AAE87B',
+    '--skinColor': '#C0C7D1',
+    '--avatarStrokeColor': '#0A2534'
 }
 
 export const lightThemeStyle = {
@@ -21,7 +24,10 @@ export const lightThemeStyle = {
     '--roleTextColor': '#f93396',
     '--borderColor': '#1e1e1e',
     '--tagColor': '#1e1e1e',
-    '--lightText': '#8d8d8d'
+    '--lightText': '#8d8d8d',
+    '--sweaterColor': '#1e1e1e',
+    '--skinColor': '#e8e8e8',
+    '--avatarStrokeColor': '#1e1e1e'
 }
 
 export const greenThemeStyle = {
@@ -34,5 +40,8 @@ export const greenThemeStyle = {
     '--roleTextColor': '#00CC00',
     '--borderColor': '#00CC00',
     '--tagColor': '#00CC00',
-    '--lightText': '#00CC00'
+    '--lightText': '#00CC00',
+    '--sweaterColor': '#00CC00',
+    '--skinColor': '#00CC00',
+    '--avatarStrokeColor': '#012500'
 }
