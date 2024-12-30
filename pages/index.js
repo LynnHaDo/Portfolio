@@ -31,11 +31,11 @@ export default function Home( { allProjectsData, techStack } ) {
         </Head>
         
             <div className="row">
-                <div className={`col-lg-8 ${styles.displayTextWrapper}`}>
+                <div className={`col-lg-7 ${styles.displayTextWrapper}`}>
                 <div className={styles.displayText}>
-                    <div className={`${utilStyles.heading2Xl}`}>Welcome to Linh's Space</div>
+                    <div className={`${utilStyles.heading2Xl}`}>Hello from Linh</div>
                     <div className={`${utilStyles.headingXl} 
-                                     ${utilStyles.caption}`}>where I talk about 
+                                     ${utilStyles.caption}`}>Let me tell you about 
                                      my <Typing words = {["full-stack web development", 
                                                         "mobile development", 
                                                         "research", 
@@ -52,7 +52,7 @@ export default function Home( { allProjectsData, techStack } ) {
                     </div>
                 </div>
                 </div>
-                <div className='col-lg-4'></div>
+                <div className='col-lg-5'></div>
             </div>
             
             <div className={`${utilStyles.tableHeader} row`}>
