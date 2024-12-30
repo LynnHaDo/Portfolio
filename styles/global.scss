@@ -5,6 +5,11 @@
     src: url('../public/fonts/Sohne-Regular.otf') 'opentype'
 }
 
+@font-face {
+    font-family: 'Sohne-Bold';
+    src: url('../public/fonts/Sohne-Bold.otf') 'opentype'
+}
+
 :root {
     --navLinkBorderRadius: 2px; 
 }
@@ -41,6 +46,12 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+
+img {
+    border-radius: var(--navLinkBorderRadius);
+    border: 1px dotted var(--text);
+}
+
 
 a {
   color: var(--link);

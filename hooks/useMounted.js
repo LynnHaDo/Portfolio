@@ -6,7 +6,8 @@ export function useMounted() {
 	useEffect(() => {
 		setTimeout(() => {
             setMounted(true)
-        }, 3000)
+        }, 0)
+        //3000)
 	}, [])
 
 	return mounted

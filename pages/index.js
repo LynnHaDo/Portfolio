@@ -55,7 +55,7 @@ export default function Home( { allProjectsData, techStack } ) {
                 <div className='col-lg-4'></div>
             </div>
             
-            <div className={`${styles.projectHeader} row`}>
+            <div className={`${utilStyles.tableHeader} row`}>
                 <div className={`col-lg-3 ${utilStyles.code}`}>
                     / DATE
                 </div>
