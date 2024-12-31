@@ -76,8 +76,11 @@
 }
   
 .listItem {
-    padding: 1.5rem 0;
     border-bottom: 1px solid var(--borderColor);
+
+    > * {
+        margin: 1em 0;
+    }
 
     &:hover {
         background-color: var(--highlight);
