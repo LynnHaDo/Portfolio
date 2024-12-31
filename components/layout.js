@@ -72,8 +72,7 @@ export default function Layout({ children, siteTitle, home }) {
     })
 
     if (!mounted) 
-        //return <Loader />
-        return null
+        return <Loader />
     else
     return (
         <div className="container">
