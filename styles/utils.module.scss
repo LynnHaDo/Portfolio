@@ -23,6 +23,13 @@
     fill: var(--tagColor);
     margin-left: 10px;
 }
+
+.icon {
+    color: var(--link);
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+}
   
 .headingXl {
     line-height: 90%;

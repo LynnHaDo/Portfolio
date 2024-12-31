@@ -1,25 +1,20 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Loader from './loader';
+import Header from './header';
 
 import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 
-import Logo from './logo';
-import Loader from './loader';
-
 import { useEffect, useState } from 'react';
 import { useMounted } from '../hooks/useMounted'
 
-const themes = ['dark', 'light', 'green'];
 import {darkThemeStyle, lightThemeStyle, greenThemeStyle} from '../components/styles'
-import NavItem from './navItem';
 
 export default function Layout({ children, siteTitle, home }) {
     const mounted = useMounted();
 
     const [selectedTheme, setSelectedTheme] = useState('dark');
-    const [isDropdownActive, setIsDropdownActive] = useState(false);
-    const [dropdownIcon, setDropdownIcon] = useState('+');
 
     const changeTheme = (newTheme) => {
         if (newTheme !== localStorage.getItem('theme'))
@@ -56,18 +51,6 @@ export default function Layout({ children, siteTitle, home }) {
         setThemeStyle()
     }, [selectedTheme])
 
-    const toggleDropdown = (isOpen) => {
-        setIsDropdownActive(isOpen);
-        
-        if (isOpen) 
-        {
-            setDropdownIcon('-');
-        }
-        else {
-            setDropdownIcon('+');
-        }
-    }
-
     if (!mounted) 
         //return <Loader />
         return null
@@ -79,32 +62,9 @@ export default function Layout({ children, siteTitle, home }) {
                 <link rel="icon" href="/logo.ico" />
             </Head>
 
-            <header className = {`${styles.header} ${utilStyles.code} d-flex justify-content-between align-items-center`}>
-                <Logo />
-
-                <div className={`${styles.buttons} d-flex justify-content-between align-items-center`}>
-                    <NavItem href='/' text='Projects' 
-                             isActive={siteTitle === 'Home'} />
-                    <NavItem href='/about' text='About' 
-                             isActive={siteTitle === 'About'} />
-                    <NavItem href='https://github.com/LynnHaDo' text='Github' isActive={false} target="_blank" rel="noopener noreferrer"/>
-                    
-                    <div className={styles.wrapperDropdown}
-                         onClick={() => toggleDropdown(!isDropdownActive)}>
-                        <span className={`${utilStyles.nav} ${styles.selectedTheme}`}>{selectedTheme}</span>
-                        <span className = {`${styles.arrow} ${styles.icon} transition-all ml-auto`}>{dropdownIcon}</span>
-                        <ul className={`${styles.dropdown} ${isDropdownActive ? styles.active : ''}`}>
-                            {
-                                themes.map((theme) => (
-                                    <li key={theme} onClick={() => changeTheme(theme)}>
-                                        {theme.toUpperCase()}
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </header>
+            <Header onChangeTheme={(theme) => changeTheme(theme)} 
+                    site={siteTitle} 
+                    theme={selectedTheme}/>
 
             
             <main className={styles.main}>
@@ -117,7 +77,7 @@ export default function Layout({ children, siteTitle, home }) {
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/" className={`${utilStyles.nav} ${utilStyles.code}`}>
-                    <svg viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={styles.icon}>
+                    <svg viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={utilStyles.icon}>
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier"> 
