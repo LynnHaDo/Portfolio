@@ -9,12 +9,19 @@ import utilStyles from '../styles/utils.module.scss';
 import { useEffect, useState } from 'react';
 import { useMounted } from '../hooks/useMounted'
 
+import { getComputedStyle, hexToRGB } from '../lib/misc';
 import {darkThemeStyle, lightThemeStyle, greenThemeStyle} from '../components/styles'
 
 export default function Layout({ children, siteTitle, home }) {
     const mounted = useMounted();
 
     const [selectedTheme, setSelectedTheme] = useState('dark');
+
+    const getRootProperty = (name) => {
+        return window.getComputedStyle(document.documentElement).getPropertyValue(name)
+    }
+
+    const [background, setBackground] = useState('');
 
     const changeTheme = (newTheme) => {
         if (newTheme !== localStorage.getItem('theme'))
@@ -44,12 +51,25 @@ export default function Layout({ children, siteTitle, home }) {
     const setThemeStyle = () => {
         let themeStyle = getThemeStyles();
         const root = document.querySelector(':root');
-        Object.entries(themeStyle).forEach(v => root.style.setProperty(v[0], v[1]));
+        Object.entries(themeStyle).forEach(v => {
+            if (v[0] == '--bg') {
+                setBackground(hexToRGB(v[1]));
+            }
+            root.style.setProperty(v[0], v[1])
+        });
+        
     }
 
     useEffect(() => {
         setThemeStyle()
     }, [selectedTheme])
+
+    useEffect(() => {
+        if (document)
+        {
+            setBackground(hexToRGB(getRootProperty('--bg')))
+        }
+    })
 
     if (!mounted) 
         //return <Loader />
@@ -64,7 +84,8 @@ export default function Layout({ children, siteTitle, home }) {
 
             <Header onChangeTheme={(theme) => changeTheme(theme)} 
                     site={siteTitle} 
-                    theme={selectedTheme}/>
+                    theme={selectedTheme}
+                    background={background}/>
 
             
             <main className={styles.main}>
