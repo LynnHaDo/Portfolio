@@ -1,0 +1,27 @@
+.avatarWrapper {
+    background-color: var(--highlight);
+    width: 200px;
+    height: 200px;
+    border-radius: var(--navLinkBorderRadius);
+    border: 1px dotted var(--link);
+    display: flex;
+    position: relative;
+    z-index: 2;
+
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .skin {
+        fill: var(--skinColor);
+    }
+
+    .sweater {
+        fill: var(--sweaterColor);
+    }
+
+    .stroke {
+        fill: var(--avatarStrokeColor);
+    }
+}

@@ -44,7 +44,7 @@ export default function Home( { allProjectsData, techStack } ) {
                     <div className={`${utilStyles.tagsWrapper} mt-5`}>
                         {
                             techStack.map((item) => (
-                                <div key={item} className={`${utilStyles.tag} mb-1`}>
+                                <div key={item} className={`${utilStyles.tag} mb-2`}>
                                     {item}
                                 </div>
                             ))

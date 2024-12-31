@@ -135,27 +135,27 @@ export default function Layout({ children, siteTitle, home }) {
                     <div className = {`col-lg-6 ${utilStyles.code} mt-5 mb-5`}>
                         <div className = "mb-5">
                             <p>/ EMAIL</p>
-                            <a href="mailto:dohalinh2303@gmail.com" className={`${utilStyles.tag} ${utilStyles.link}`}>
+                            <a href="mailto:dohalinh2303@gmail.com" className={`${utilStyles.tag} ${utilStyles.link} mb-2`}>
                                 dohalinh2303@gmail.com
                             </a>
-                            <a href="mailto:do24l@mtholyoke.edu" className={`${utilStyles.tag} ${utilStyles.link}`}>
+                            <a href="mailto:do24l@mtholyoke.edu" className={`${utilStyles.tag} ${utilStyles.link} mb-2`}>
                                 do24l@mtholyoke.edu
                             </a>
                         </div>
 
                         <div className = "mb-2">
                             <p>/ SOCIAL</p>
-                            <a href="https://github.com/LynnHaDo" target="_blank" className={`${utilStyles.tag} ${utilStyles.link}`}>
+                            <a href="https://github.com/LynnHaDo" target="_blank" className={`${utilStyles.tag} ${utilStyles.link} mb-2`}>
                                 Github 
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/linh-do-0327371b2/"
                                 target="_blank"
-                                className={`${utilStyles.tag} ${utilStyles.link}`}
+                                className={`${utilStyles.tag} ${utilStyles.link} mb-2`}
                             >
                                 LinkedIn
                             </a>
-                            <a href="https://www.behance.net/dolinh" target="_blank" className={`${utilStyles.tag} ${utilStyles.link}`}>
+                            <a href="https://www.behance.net/dolinh" target="_blank" className={`${utilStyles.tag} ${utilStyles.link} mb-2`}>
                                 Behance
                             </a>
                         </div>
