@@ -8,3 +8,7 @@ My rework version of my old portfolio. This time, using NextJS.
 - [x] Add basic layout
     - [x] Render projects by sorted date
     - [x] Add themes to view 
+- [x] Add detailed layout
+    - [x] Responsive menu: Animate scroll behavior and adjust background transparency
+    - [x] Parse HTML content returned from `.md` 
+    - [x] Send callbacks and states between header and content for a better UI/UX experience
