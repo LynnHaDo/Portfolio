@@ -8,7 +8,12 @@ github_url: "https://github.com/LynnHaDo/QnA-Website"
 
 Q&A (Question-and-Answer) is a full-stack feedback management app for Brown students. During our first meeting, my advisor, Professor Malte, told me about this itchy problem of teaching assistants/professors @ Brown when answering a large set of questions: having to go through each question manually, even though most of them share the same topic. Coming from a liberal arts education, this is not an issue that I was aware of 😃.
 
+1. ![List](/projects/question-and-answer/list-questions.png)
+
 So he proposed this idea of using K-Means clustering to cluster the questions into different groups. I used this idea to implement a system that lets users do that! That's the origin of this project.
+
+1. ![Cluster](/projects/question-and-answer/clusters.png)
+2. ![Cluster 2](/projects/question-and-answer/clusters-2.png)
 
 I chose Angular since it is a front-end framework that I had experience with. For the server, I chose a framework that uses Python because of its robust support for data models, and Django was an ideal selection at that time. I can easily set up Django to work on MySQL databases, and use their ORM support to implement RESTful APIs. 
 
@@ -18,13 +23,20 @@ Q&A helps streamline the grading process by clustering the questions asked at th
 
 (1) Select the ones they want to answer. Questions are claimed on a first-come-first-serve basis.
 
-(2) Answer similar questions in bulk
+(2) Format feedback using a built-in text-editor
 
-(3) Pinpoint similar topics that students are most unsure about
+1. ![Answer an individual one](/projects/question-and-answer/answer.png)
+2. ![Submit](/projects/question-and-answer/submit-answer.png)
 
-(4) View grading/feedback progress
+(3) Answer similar questions in bulk
 
-(5) Format feedback using a built-in text-editor
+1. ![Answer dashboard](/projects/question-and-answer/answer-in-bulk.png)
+
+(4) Pinpoint similar topics that students are most unsure about
+
+(5) View grading/feedback progress
+
+1. ![Assignment dashboard](/projects/question-and-answer/assignment-dashboard.png)
 
 (6) Import `.csv` data (courses, assignments, questions, users—students, staff) into the database using Python scripts (administrators can access the Django administration board to do this).
 
@@ -32,9 +44,13 @@ Even though this project is labelled a "research" project, it gave me hands-on f
 
 # What I did 
 
-In summary, I have developed a scalable grading web app using Angular and Django, ensuring reliable service while reducing administrative workload for teaching assistants and professors. Thanks to 
-• Implemented K-Means clustering algorithm to automate the classification and assignment of student queries to teaching assistants, improving system reliability and reducing grading time by 50%.
-• Optimized Django RESTful APIs with serializers, improving data validation and reducing data access latency by 30%.
+In summary, I have developed a scalable grading web app using Angular and Django, ensuring reliable service while reducing administrative workload for teaching assistants and professors. Using the K-Means clustering algorithm, I automated the classification and assignment of student queries to teaching assistants, improving system reliability and reducing grading time.
+
+With concerns about data access latency, I have optimized Django serializers to improve the response speed and enhance data integrity.
+
+Like any other app, I implemented a secure registration/log in system that also lets user reset password via email. 
+
+1. ![Sign up](/projects/question-and-answer/sign-up.png)
 
 # On second thought
 
