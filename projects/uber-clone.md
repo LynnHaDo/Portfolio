@@ -6,9 +6,9 @@ label: "iOS development"
 github_url: "https://github.com/LynnHaDo/Uber-Clone"
 ---
 
-# What I did
+# Updates
 
-Developed a mobile chat app with integrated chatting and image generation services, leveraging ChatGPT and DALL·E APIs to provide users with customized and contextual conversational experiences.
+This app is still under construction 🚧
 
 # Frameworks and Libraries
 

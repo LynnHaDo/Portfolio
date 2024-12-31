@@ -14,13 +14,30 @@ Regarding product design, I was always interested in UI/UX design in general (bu
 
 About prompt engineering—this is my first time working with using LLM in my development project. With just a few changes in the tone and words, the responses the model gave were totally different! Knowing this, I let users select from different roles, and adjust any parameters to customize the experience. 
 
-1. [![Android Demo](https://cdn.loom.com/sessions/thumbnails/0251287798f547528f06437493ef136b-ca79015b6fa1741f-full-play.gif)](https://www.loom.com/share/0251287798f547528f06437493ef136b)
+[Android Demo](https://www.loom.com/share/0251287798f547528f06437493ef136b)
 
-2. [![iOS Demo](https://cdn.loom.com/sessions/thumbnails/2429e16e59c1463e8342e0dd21b4bee4-324cc26419a33110-full-play.gif)](https://www.loom.com/share/2429e16e59c1463e8342e0dd21b4bee4)
+[iOS Demo](https://www.loom.com/share/2429e16e59c1463e8342e0dd21b4bee4)
 
 # What I did
 
 I developed a mobile (iOS and Android) chat app with integrated chatting and image generation services, leveraging ChatGPT and DALL·E APIs. Users can directly mutate the parameters and adjust the output by the models, which ensure better customized and contextual conversational experiences. 
+
+## Android: Pixel 5
+
+1. ![Android 1](/projects/convobot/Android_1.png)
+2. ![Android 2](/projects/convobot/Android_2.png)
+3. ![Android 3](/projects/convobot/Android_3.png)
+4. ![Android 4](/projects/convobot/Android_4.png)
+5. ![Android 5](/projects/convobot/Android_5.png)
+
+## iOS: iPhone 16 Pro
+
+1. ![iOS 1](/projects/convobot/iOS_1.png)
+2. ![iOS 2](/projects/convobot/iOS_2.png)
+3. ![iOS 3](/projects/convobot/iOS_3.png)
+4. ![iOS 4](/projects/convobot/iOS_4.png)
+5. ![iOS 5](/projects/convobot/iOS_5.png)
+6. ![iOS 6](/projects/convobot/iOS_6.png)
 
 Previously, I set up the calls to the models directly on the client side. But by making calls to the Chat-GPT and DALL-E models from [a separate server app](https://github.com/LynnHaDo/ConvoBot-Server) deployed to Heroku, I can ensure better security and scalability to the app. The APIs endpoints are set up in Express.js. 
 
