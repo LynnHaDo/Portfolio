@@ -7,10 +7,6 @@ import utilStyles from '../styles/utils.module.scss'
 export default function Custom404() {
     return (
         <Layout siteTitle={"Page not found"}>
-            <Head>
-                <title>Oops</title>
-            </Head>
-
             <div className="row mb-2">
                 <div className="col-lg-8">
                     <div className={utilStyles.heading2Xl}>

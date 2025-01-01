@@ -26,10 +26,6 @@ export async function getStaticProps() {
 export default function Home( { allProjectsData, techStack } ) {
   return (
     <Layout home siteTitle="Home">
-        <Head>
-            <title>Linh Do</title>
-        </Head>
-        
             <div className="row">
                 <div className={`col-lg-7 ${styles.displayTextWrapper}`}>
                 <div className={styles.displayText}>

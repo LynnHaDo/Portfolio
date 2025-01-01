@@ -47,7 +47,7 @@ export default function Header({ site, onChangeTheme, theme, background }) {
     return (
         <div className={styles.header} style={{background: `rgba(${background},${backgroundTransparency})`}}>
                 <input type="checkbox" className={styles.hidden} id="nav"/>
-                <label for="nav" className={styles.navOpen}><i></i><i></i><i></i></label>
+                <label htmlFor="nav" className={styles.navOpen}><i></i><i></i><i></i></label>
                 <div className={`${styles.contentWrapper} container`}>
                     <header className = {`${utilStyles.code} d-flex justify-content-between align-items-center`}>
                         <Logo />

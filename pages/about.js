@@ -21,9 +21,6 @@ export default function About({ aboutData }) {
     else
     return (
         <Layout siteTitle={"About"}>
-            <Head>
-                <title>About me</title>
-            </Head>
             <div className="row mb-5">
                 <h1 className={utilStyles.heading2Xl}>
                     About me

@@ -10,11 +10,7 @@ import utilStyles from '../../styles/utils.module.scss'
 
 export default function Project({ projectData }) {
     return (
-        <Layout siteTitle={"Projects"}>
-            <Head>
-                <title>Projects | {projectData.title}</title>
-            </Head>
-
+        <Layout siteTitle={projectData.title}>
             <div className="row mb-5">
                 <h1 className={utilStyles.heading2Xl}>
                     {projectData.title}
