@@ -4,6 +4,7 @@ date: "2023-05-31"
 end_date: "2023-08-10"
 label: "AI Research"
 github_url: "https://github.com/LynnHaDo/Checkbox-Detection"
+category: "AI/ML"
 ---
 
 There was once a time when I would spend everyday trying to improve a detection model, kept on trying with different approaches/datasets and seeing little to no difference in the accuracy/recall level. Yes, this is what the whole process of this project was. 

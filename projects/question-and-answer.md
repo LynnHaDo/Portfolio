@@ -4,6 +4,7 @@ date: "2024-03-01"
 end_date: "2024-04-30"
 label: "full-stack development"
 github_url: "https://github.com/LynnHaDo/QnA-Website"
+category: "Web"
 ---
 
 Q&A (Question-and-Answer) is a full-stack feedback management app for Brown students. During our first meeting, my advisor, Professor Malte, told me about this itchy problem of teaching assistants/professors @ Brown when answering a large set of questions: having to go through each question manually, even though most of them share the same topic. Coming from a liberal arts education, this is not an issue that I was aware of 😃.

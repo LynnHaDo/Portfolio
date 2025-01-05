@@ -4,6 +4,7 @@ date: "2024-06-23"
 end_date: "2024-09-23"
 label: "interactive game development"
 github_url: "https://github.com/LynnHaDo/GestureVerse"
+category: "Web"
 ---
 
 Gesture-Verse is web application that guides users through a **choose-your-own-adventure** game using Windrift, a JavaScript framework for writing interactive stories. The application was developed using NextJS, a React framework. 

@@ -4,6 +4,7 @@ date: "2024-10-20"
 end_date: "2024-12-05"
 label: "full-stack development"
 github_url: "https://github.com/LynnHaDo/valetbike"
+category: "Web"
 ---
 
 ValetBike is a full-stack bike rental web application using Ruby on Rails. With an interactive map, users can select any stations nearby their current location (of course, with their permission to access the location), and we will assign them any available bike. 

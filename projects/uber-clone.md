@@ -4,6 +4,7 @@ date: "2025-01-02"
 end_date: "2025-01-28"
 label: "iOS development"
 github_url: "https://github.com/LynnHaDo/Uber-Clone"
+category: "Mobile"
 ---
 
 # Updates

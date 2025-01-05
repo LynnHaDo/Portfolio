@@ -4,6 +4,7 @@ date: "2024-06-23"
 end_date: "2024-09-23"
 label: "mobile development"
 github_url: "https://github.com/LynnHaDo/ConvoBot"
+category: "Mobile"
 ---
 
 This is a fun and quick project that I did on the side when I was a bit bored with the Chat-GPT interface and wanted to make an app on my own. The biggest challenge for me is mastering React Native, since it was a new framework for me. Fortunately, as I had some exposure to NextJS in [the previous project](/projects/gesture-verse), everything went smoothly at the end.
