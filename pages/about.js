@@ -38,7 +38,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             Occupation
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
@@ -47,7 +47,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             Based in
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
@@ -56,7 +56,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             University
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
@@ -65,7 +65,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             Graduation year
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
@@ -74,7 +74,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             Focus
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
@@ -83,7 +83,7 @@ export default function About({ aboutData }) {
                     </div>
 
                     <div className={`${utilStyles.listItem} row`}>
-                        <div className={`col-lg-3 d-flex align-items-center`}>
+                        <div className={`col-lg-4 d-flex align-items-center`}>
                             RESUME 
                         </div>
                         <div className={`col-lg-8 d-flex align-items-center`}>
