@@ -5,6 +5,7 @@ end_date: "2024-01-10"
 label: "Full-stack Development"
 github_url: "https://github.com/LynnHaDo/Fleur-Fantasia"
 category: "Web"
+languages: "TypeScript,Java,HTML/CSS,SQL"
 ---
 
 Fleur Fantasia is a full-stack e-commerce web app that allows users to browse and purchase different flower/plant options. As a solo effort, this project gave me full-stack ownership, from prototyping, system design to the actual deployment. I was familiar with Angular, and so it was an easy choice for me. For the server side, I noticed that Spring Boot can greatly streamline a lot of database manipulation steps, which is great for building RESTful APIs. 

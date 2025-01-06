@@ -5,6 +5,7 @@ end_date: "2023-07-24"
 label: "AI Research"
 github_url: "https://github.com/LynnHaDo/Document-Layout-Analysis"
 category: "AI/ML"
+languages: "Python"
 ---
 
 This is my first attempt at learning about training a model—specifically, a detection model on scanned documents. Using [YOLOv8](https://docs.ultralytics.com/models/yolov8/), I was able to achieve surprisingly accurate detections on 11 document classes, based on a small subset (< 700 images) of the [Doclaynet](https://github.com/DS4SD/DocLayNet) dataset. 
