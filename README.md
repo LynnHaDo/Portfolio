@@ -12,3 +12,4 @@ My rework version of my old portfolio. This time, using NextJS.
     - [x] Responsive menu: Animate scroll behavior and adjust background transparency
     - [x] Parse HTML content returned from `.md` 
     - [x] Send callbacks and states between header and content for a better UI/UX experience
+- [x] Add project filters
