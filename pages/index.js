@@ -29,6 +29,7 @@ export async function getStaticProps() {
 export default function Home( { allProjectsData, allProjectCategories, techStack } ) {
   const [projectsData, setProjectsData] = useState(allProjectsData);
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [isFilterShown, showFilter] = useState(true);
 
   const filterProjectsByCategory = (projectsData, categories = []) => {
     if (categories.length == 0)
@@ -51,7 +52,6 @@ export default function Home( { allProjectsData, allProjectCategories, techStack
     {
         setSelectedCategories([...selectedCategories, category])
     }
-    console.log(selectedCategories);
   }
    
   return (
@@ -84,13 +84,29 @@ export default function Home( { allProjectsData, allProjectCategories, techStack
             <div className="row mt-5 mb-3">
                 <div className={`col-lg-2 ${utilStyles.lightText} ${utilStyles.code} ${utilStyles.allCaps} mb-5`}>
                     <div className={`${utilStyles.tableHeader} row`}>
-                        / TYPE 
+                        <div className="col-lg-12">
+                            / FILTER
+                        </div>
+                    </div>
+                    <div style={{marginTop: '1em'}}>
+                    <button className={utilStyles.filterOpenner} onClick={() => showFilter(!isFilterShown)}>
+                        <svg className={utilStyles.folderIcon} width={20} height={16} viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <title>Folder Icon</title>
+                            {
+                                isFilterShown ? <path fillRule="evenodd" clipRule="evenodd" d="M1 0H7V1H1V0ZM1 6V1H0V9H1V10H11V9H12V3H11V2H8V1H7V2H8V3H11V4H3V5H2V6H1ZM1 7V9H11V5H3V6H2V7H1Z" fill="currentColor"></path> :
+                                <path fillRule="evenodd" clipRule="evenodd" d="M7 0H1V1H0V2V3V9H1V10H11V9H12V3H11V2H8V1H7V0ZM11 3V9H1V3H7H8H11ZM7 1V2H1V1H7Z" fill="currentColor"></path>
+                            }
+                        </svg>
+                        Type
+                    </button>
                     </div>
                     {
-                        allProjectCategories.map(category => (
-                            <div className="form-check category" key={category}>
-                                <input className="form-check-input" type="checkbox" value={category} id={category} onChange={() => handleCheck(category)} />
-                                <label className="form-check-label" htmlFor={category}>
+                        isFilterShown && allProjectCategories.map(category => (
+                            <div className={utilStyles.formCheck} key={category}>
+                                <span></span>
+                                <span></span>
+                                <input type="checkbox" value={category} id={category} onChange={() => handleCheck(category)} />
+                                <label htmlFor={category}>
                                     {category}
                                 </label>
                             </div>
@@ -107,7 +123,7 @@ export default function Home( { allProjectsData, allProjectCategories, techStack
                             / NAME 
                         </div>
                         <div className={`col-lg-4 ${utilStyles.code}`}>
-                            / CATEGORY
+                            / LABEL
                         </div>
                     </div>
                     <div className={utilStyles.list}>
