@@ -6,10 +6,10 @@ import Header from './header';
 import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useMounted } from '../hooks/useMounted'
 
-import { getComputedStyle, hexToRGB } from '../lib/misc';
+import { hexToRGB } from '../lib/misc';
 import {darkThemeStyle, lightThemeStyle, greenThemeStyle} from '../components/styles'
 
 export default function Layout({ children, siteTitle, home }) {
@@ -24,6 +24,8 @@ export default function Layout({ children, siteTitle, home }) {
     const [background, setBackground] = useState('');
 
     const [isLoaderShown, showLoader] = useState(true);
+
+    const audioEl = useRef(null);
 
     const changeTheme = (newTheme) => {
         if (newTheme !== localStorage.getItem('theme'))
@@ -69,14 +71,20 @@ export default function Layout({ children, siteTitle, home }) {
     useEffect(() => {
         if (document)
         {
-            setBackground(hexToRGB(getRootProperty('--bg')))
+            setBackground(hexToRGB(getRootProperty('--bg')));
+            let clickables = document.querySelectorAll('a, button');
+            clickables.forEach((el) => {
+                el.addEventListener('click', () => {
+                    audioEl.current.play();
+                })
+            })
         }
     })
 
     useEffect(() => {
         setTimeout(() => {
             showLoader(false);
-        }, 3000)
+        }, 2000)
     }, [isLoaderShown])
 
     if (!mounted) 
@@ -99,6 +107,9 @@ export default function Layout({ children, siteTitle, home }) {
                             theme={selectedTheme}
                             background={background}
                     />
+
+                    <audio ref={audioEl} src="/sounds/button-click.wav" />
+
                     <main className={styles.main}>
                         <div className="container">
                             {children}
